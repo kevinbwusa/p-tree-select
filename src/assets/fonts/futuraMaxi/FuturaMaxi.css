@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'FuturaMaxi-Book';
+    font-style: normal;
+    font-display: swap;
+    src: url('FuturaMaxi-Book.otf');
+}
+
+@font-face {
+    font-family: 'FuturaMaxi-Bold';
+    font-style: normal;
+    font-display: swap;
+    src: url('FuturaMaxi-Bold.otf');
+}

@@ -1,1 +1,2130 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* See CSS variables here */
+@import 'theme.css';
+
+/* Modern CSS Reset (used by DT) */
+@import url(~node_modules/modern-css-reset/dist/reset.min.css);
+
+/* Bootstrap */
+@import url(~node_modules/bootstrap/dist/css/bootstrap.min.css);
+
+/* DT Styles here */
+@import 'application.css';
+
+/* Fonts */
+@import url(~node_modules/roboto-fontface/css/roboto/roboto-fontface.css);
+@import '~font-awesome/css/font-awesome.css';
+@import '~material-icons/iconfont/material-icons.css';
+
+/* Font definitions */
+@font-face {
+
+	font-family: 'FuturaMaxi-Book';
+	src: url('assets/fonts/futuraMaxi/FuturaMaxi-Book.otf');
+}
+
+@font-face {
+	font-family: 'FuturaMaxi-Bold';
+	src: url('assets/fonts/futuraMaxi/FuturaMaxi-Bold.otf');
+}
+
+/* @font-face {
+	font-family: 'Material Icons Sharp';
+	font-style: normal;
+	font-weight: 400;
+	src: url('assets/fonts/material-icons/MaterialIconsSharp-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('assets/fonts/material-icons/MaterialIcons-Regular.eot');
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url('assets/fonts/material-icons/MaterialIcons-Regular.woff2') format('woff2'),
+    url('assets/fonts/material-icons/MaterialIcons-Regular.woff') format('woff'),
+    url('assets/fonts/material-icons/MaterialIcons-Regular.ttf') format('truetype');
+} */
+
+/* Material Icons Styles */
+.material-icons-sharp,
+.material-icons {
+  font-weight: normal;
+  font-style: normal;
+  font-size: var(--default-icon-size);  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.material-icons {
+	font-family: 'Material Icons';
+}
+
+.material-icons-sharp {
+	font-family: 'Material Icons Sharp';
+}
+
+/* Body flows down to all children */
+body {
+   background-color: black;
+   padding-top: 48px; /* Size of navbar, pushes content below the static navbar */
+}
+
+/* Color proxies (proxy class for applying variable color */
+/* Preferably these names would not include the color in the future
+but since there are various primary, secondary, tertiary, etc colors
+I am using the color in the name for now, please try to use the same
+syntax when creating new proxy classes for colors, etc */
+
+.tertiary-yellow-bg {
+	background-color: var(--tertiary-yellow);
+}
+
+.tertiary-yellow-color {
+	color: var(--tertiary-yellow);
+}
+
+.color-warning {
+	color: var(--secondary-orange-darken);
+}
+
+.color-success {
+	color: var(--tertiary-light-green);
+}
+
+.color-danger {
+	color: red;
+}
+
+.required-field {
+	color: red;
+	font-size: 14pt;
+}
+
+/* Badges */
+
+.badge-nopad {
+	display: inline-block;
+	font-size: 75%;
+	font-weight: 700;
+	line-height: 1;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	border-radius: 0.25rem;
+}
+
+.badge {
+	display: inline-block;
+	font-size: 75%;
+	font-weight: 700;
+	line-height: 1;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	border-radius: 0.25rem;
+	padding: 0.25em 0.4em;
+}
+
+.badge-extrapad {
+	display: inline-block;
+	font-size: 75%;
+	font-weight: 700;
+	line-height: 1;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	border-radius: 0.25rem;
+	padding: 0.25em 1.25em;
+}
+
+/* Loading icons */
+
+/* ngx-loading only  */
+/* Required to override -ms-page default for MS IE and Edge browsers which behave like a single page and do not cover whole scrolling area. */
+div.full-screen {
+   position: fixed !important;
+}
+
+/* Changed to allow access to the navbar and keep the loading icon in place when scrolling page - remove if necessary */
+ngx-loading.content-backdrop > * > div.backdrop {
+	position: fixed !important;
+}
+
+/* Exact location of the loading icon, unfortunately doesn't have any other styles or ids to identify */
+ngx-loading.content-backdrop > div > div > div  {
+	position: fixed !important;
+}
+
+.tas-loading-wrapper {
+	z-index: 2000 !important;
+}
+
+/* Put the navbar above the loading screen - remove if necessary */
+.fixed-top {
+	z-index: 2000 !important;
+}
+
+.tas-loading {
+  color:#B3523C;
+  position:fixed;
+  left:47%;
+  top:40%;
+  z-index:9999;
+}
+
+/* Tooltips */
+.tooltip {
+	z-index: 9999 !important;
+}
+
+/* Anchors */
+
+a.tas-msg-links {
+   color: #fff !important;
+   text-decoration: underline;
+}
+
+a.tas-msg-links:hover {
+   color: #7BC9F0 !important; /* Light blue */
+   text-decoration: underline;
+}
+
+/* Width defaults (not included with bootstrap) */
+.w-5 {
+   width: 5% !important;
+}
+
+.w-10 {
+   width: 10% !important;
+}
+
+.w-15 {
+   width: 15% !important;
+}
+
+.w-12d5 {
+   width: 12.5% !important;
+}
+
+.w-20 {
+   width: 20% !important;
+}
+
+.tas-copyright {
+   width: 100%;
+   max-width: 4320px;
+   padding: 15px;
+   margin: auto;
+   background-color:white;
+   background-color:var(--page-bg-color);
+}
+
+.tas-text-color {
+   color: black;
+}
+
+.tas-error-require{
+   font-weight: 500;
+   font-size: 13px;
+   margin-top: 5px;
+   color: red;
+}
+
+.tas-infoTip{
+   font-weight: 600;
+   border-bottom: 1px dotted #2980b9;
+   text-decoration: none;
+   color:#007bff;
+   cursor: help;
+}
+
+.tas-charLimits{
+	color: var(--primary-blue);
+	font-weight: 600;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+/*Asset Submit form validation colors*/
+p-group-multiselect.ng-invalid p-multiselectg > div {
+   border: 2px solid var(--secondary-light-gray);
+   border-left: 5px solid #a94442;
+   border-radius: 0px;
+}
+
+body tas-multiselect-dropdown.ng-invalid > div {
+   border: 2px solid var(--secondary-light-gray);
+   border-left: 5px solid #a94442;
+   border-radius: 0px;
+}
+
+body textarea.ng-invalid {
+   border: 2px solid var(--secondary-light-gray) !important;
+   border-left: 5px solid #a94442 !important;
+   border-radius: 0px !important;
+}
+
+body select.ng-invalid,
+body select.ng-untouched.ng-invalid {
+   border: 2px solid var(--secondary-light-gray) !important;
+   border-left: 5px solid #a94442 !important;
+   border-radius: 0px !important;
+}
+
+body select.ng-untouched {
+   border: 2px solid var(--secondary-light-gray) !important;
+   border-radius: 0px !important;
+}
+
+body input.ng-invalid {
+   border: 2px solid var(--secondary-light-gray) !important;
+   border-left: 5px solid #a94442 !important;
+   border-radius: 0px !important;
+}
+
+.flag {
+	margin-right: 5px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+/* Custom TAS UI switch ON/OFF*/
+.switch.checked small:after{
+  content:'\2714';
+  margin: 5px 5px 5px 8px !important;
+  float:left;
+}
+.switch.switch-medium > .switch-pane .switch-label-unchecked{font-weight: 600;}
+.switch.checked .switch-pane{
+ color:#ffffff;
+  font-weight: bold;
+}
+
+/**/
+/*Style for the toastr notifications*/
+/* position */
+.toast-center-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.toast-top-center {
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+
+.toast-bottom-center {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+
+.toast-top-full-width {
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+
+.toast-bottom-full-width {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+
+.toast-top-left {
+  top: 12px;
+  left: 12px;
+}
+
+.toast-top-right {
+  top: 12px;
+  right: 12px;
+}
+
+.toast-bottom-right {
+  right: 12px;
+  bottom: 12px;
+}
+
+.toast-bottom-left {
+  bottom: 12px;
+  left: 12px;
+}
+
+/* toast styles */
+.toast-title {
+  font-weight: bold;
+}
+
+.toast-message {
+  word-wrap: break-word;
+}
+
+.toast-message a,
+.toast-message label {
+  color: #FFFFFF;
+}
+
+.toast-message a:hover {
+  color: #CCCCCC;
+  text-decoration: none;
+}
+
+.toast-close-button {
+  position: relative;
+  right: -0.3em;
+  top: -0.3em;
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-shadow: 0 1px 0 #ffffff;
+  /* opacity: 0.8; */
+}
+
+.toast-close-button:hover,
+.toast-close-button:focus {
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.4;
+}
+
+/*Additional properties for button version
+ iOS requires the button element instead of an anchor tag.
+ If you want the anchor version, it requires `href="#"`.*/
+button.toast-close-button {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+}
+
+.toast-container {
+  pointer-events: none;
+  position: fixed;
+  z-index: 999999;
+}
+
+.toast-container * {
+  box-sizing: border-box;
+}
+
+.toast-container .ngx-toastr {
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 6px;
+  padding: 15px 15px 15px 50px;
+  width: 300px;
+  border-radius: 3px 3px 3px 3px;
+  background-position: 15px center;
+  background-repeat: no-repeat;
+  background-size: 24px;
+  box-shadow: 0 0 12px #999999;
+  color: #FFFFFF;
+}
+
+.toast-container .ngx-toastr:hover {
+  box-shadow: 0 0 12px #000000;
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* https://github.com/FortAwesome/Font-Awesome-Pro/blob/master/advanced-options/raw-svg/regular/info-circle.svg */
+.toast-info {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='512' height='512'%3E%3Cpath fill='rgb(255,255,255)' d='M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z'/%3E%3C/svg%3E");
+}
+
+/* https://github.com/FortAwesome/Font-Awesome-Pro/blob/master/advanced-options/raw-svg/regular/times-circle.svg */
+.toast-error {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='512' height='512'%3E%3Cpath fill='rgb(255,255,255)' d='M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z'/%3E%3C/svg%3E");
+}
+
+/* https://github.com/FortAwesome/Font-Awesome-Pro/blob/master/advanced-options/raw-svg/regular/check.svg */
+.toast-success {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='512' height='512'%3E%3Cpath fill='rgb(255,255,255)' d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z'/%3E%3C/svg%3E");
+}
+
+/* https://github.com/FortAwesome/Font-Awesome-Pro/blob/master/advanced-options/raw-svg/regular/exclamation-triangle.svg */
+.toast-warning {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512' width='576' height='512'%3E%3Cpath fill='rgb(255,255,255)' d='M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z'/%3E%3C/svg%3E");
+}
+
+.toast-container.toast-top-center .ngx-toastr,
+.toast-container.toast-bottom-center .ngx-toastr {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.toast-container.toast-top-full-width .ngx-toastr,
+.toast-container.toast-bottom-full-width .ngx-toastr {
+  width: 96%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ngx-toastr {
+  background-color: #030303;
+  pointer-events: auto;
+}
+
+.toast-success {
+  background-color: #51A351;
+}
+
+.toast-error {
+  background-color: #BD362F;
+}
+
+.toast-info {
+  background-color: #2F96B4;
+}
+
+.toast-warning {
+  background-color: #F89406;
+}
+
+.toast-progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  background-color: #000000;
+  opacity: 0.4;
+}
+
+/* Responsive Design - Media queries */
+@media all and (max-width: 240px) {
+  .toast-container .ngx-toastr.div {
+    padding: 8px 8px 8px 50px;
+    width: 11em;
+	}
+
+  .toast-container .toast-close-button {
+    right: -0.2em;
+    top: -0.2em;
+  }
+}
+
+@media all and (min-width: 241px) and (max-width: 480px) {
+  .toast-container .ngx-toastr.div {
+    padding: 8px 8px 8px 50px;
+    width: 18em;
+  }
+  .toast-container .toast-close-button {
+    right: -0.2em;
+    top: -0.2em;
+  }
+}
+
+@media all and (min-width: 481px) and (max-width: 768px) {
+  .toast-container .ngx-toastr.div {
+    padding: 15px 15px 15px 50px;
+    width: 25em;
+  }
+}
+
+/*end of style for toastr notifications*/
+
+/* Custom buttons */
+
+button.calendar, button.calendar:active {
+  width: 2.75rem;
+  background-image: url('assets/images/ecoe-tas-icons/calendar.png') !important;
+  background-repeat: no-repeat;
+  background-size: 32px;
+  background-position: center;
+}
+
+button.list-active, button.list-active:active {
+  width: 2.75rem;
+  background-image: url('assets/images/ecoe-tas-icons/list-active.svg') !important;
+  background-repeat: no-repeat;
+  background-size: 32px;
+  background-position: center;
+}
+
+button.list-inactive, button.list-inactive:active {
+  width: 2.75rem;
+  background-image: url('assets/images/ecoe-tas-icons/list-inactive.svg') !important;
+  background-repeat: no-repeat;
+  background-size: 32px;
+  background-position: center;
+}
+
+button.grid-active, button.grid-active:active {
+  width: 2.75rem;
+  background-image: url('assets/images/ecoe-tas-icons/grid-active.svg') !important;
+  background-repeat: no-repeat;
+  background-size: 32px;
+  background-position: center;
+}
+
+button.grid-inactive, button.grid-inactive:active {
+  width: 2.75rem;
+  background-image: url('assets/images/ecoe-tas-icons/grid-inactive.svg') !important;
+  background-repeat: no-repeat;
+  background-size: 32px;
+  background-position: center;
+}
+
+/* Ribbons */
+
+.tas-bb-ribbon {
+  position: relative;
+  height: 2.8125em;
+  line-height: 2.8125em;
+  background: #26a9a9;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 1.2em;
+}
+
+.tas-bb-ribbon:before, .tas-bb-ribbon:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  border-top: solid 1.40625em transparent;
+  border-bottom: solid 1.40625em transparent;
+}
+
+.tas-bb-ribbon:before {
+  left: 0;
+  border-left: solid 0.703125em #f0fcff;
+}
+
+.tas-bb-ribbon:after {
+  right: 0;
+  border-right: solid 0.703125em #f0fcff;
+}
+
+
+/* SVG styles */
+
+/* Converts black fill SVG to teal color */
+.filter-teal {
+	filter: invert(43%) sepia(94%) saturate(400%) hue-rotate(129deg) brightness(93%) contrast(86%);
+}
+
+/*Converts black fill SVG to white color */
+.filter-white {
+	filter: invert(100%) sepia(4%) saturate(1791%) hue-rotate(169deg) brightness(111%) contrast(101%);
+}
+
+/* Buttons */
+
+/* Primary button style default overrides
+Please explain changes as they will apply to all buttons */
+body .btn {
+	border-radius: 0px; /* To match material design, no rounded edges*/;
+	font-family: var(--futura-maxi-book);
+	font-size: 12pt;
+	margin: 0;
+	padding-left: 1.75rem;
+	padding-right: 1.75rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	background-color: var(--primary-blue);
+	color: var(--primary-white);
+	border: none;
+	box-shadow: none;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	display: flex; /* Better button alignment */
+}
+
+body .btn:disabled,
+body .btn.disabled {
+	cursor: default;
+}
+
+body .btn:hover {
+	background-color: var(--secondary-light-gray);
+	color: var(--primary-black);
+}
+
+
+
+/* Replicate the DT button alignment, looks better since text is vertically centered
+Need a span with text class on it around the text on button
+DT does this by creating a component wrapper for button, but this is a bit more difficult in
+Angular since we need to manage angular events/directives as well.
+So TODO: Try to make a button wrapper that works with angular in future */
+.btn .text {
+	padding-bottom: 0.25rem;
+}
+
+.btn .material-icons-sharp {
+	margin-right: 0.75rem;
+}
+
+body .btn-tertiary {
+	background-color: var(--tertiary-yellow);
+	color: black;
+}
+
+body .btn-tertiary:hover {
+	background-color: var(--tertiary-yellow);
+	color: black;
+}
+
+.tas-btn-info {
+   max-width: 38px;
+   max-height: 38px;
+   position: relative;
+   top: 12px;
+   left: 12px
+}
+
+/* Button outline primary */
+/* DT uses more button combinations than available with bootstrap
+defaults are defined here, but you can define new styles that build on .btn
+with the new colors */
+/* TODO: Some of these bootstrap button styles do not correlate with DT button styles, until they are
+changed in various places in the application, try to keep their styles inline with the new DT styles */
+
+body .btn-outline-primary {
+	color: var(--primary-black);
+	background-color: white;
+	background-image: none;
+	border: 1px solid var(--primary-black);
+}
+
+body .btn-outline-primary:hover {
+	color: white;
+	background-color: var(--primary-black);
+	border-color: var(--primary-black);
+}
+
+body .btn-outline-primary:focus, body .btn-outline-primary.focus {
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(123, 201, 240, 0.5);
+	box-shadow: 0 0 0 0.2rem rgba(123, 201, 240, 0.5);
+}
+
+body .btn-outline-primary.disabled, body .btn-outline-primary:disabled {
+	color: var(--btn-info-color);
+	background-color: white;
+}
+
+body .btn-outline-primary:not(:disabled):not(.disabled):active, body .btn-outline-primary:not(:disabled):not(.disabled).active,
+body .show > .btn-outline-primary.dropdown-toggle {
+	color: white;
+	background-color: var(--btn-info-color);
+	border-color: var(--btn-info-color);
+}
+
+body .btn-outline-primary:not(:disabled):not(.disabled):active:focus, body .btn-outline-primary:not(:disabled):not(.disabled).active:focus,
+body .show > .btn-outline-primary.dropdown-toggle:focus {
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(123, 201, 240, 0.5);
+	box-shadow: 0 0 0 0.2rem rgba(123, 201, 240, 0.5);
+}
+
+/* Button Secondary */
+
+body .btn-secondary {
+	background-color: var(--primary-blue);
+	color: var(--primary-white);
+	border: none;
+}
+
+body .btn-secondary:hover {
+	background-color: var(--secondary-light-gray);
+	color: var(--primary-black);
+	border: none;
+}
+
+body .btn-secondary.disabled, body .btn-secondary:disabled,
+body .btn-secondary.disabled:hover, body .btn-secondary:disabled:hover {
+	color: var(--secondary-light-gray-darken);
+	background-color: transparent;
+}
+
+
+body .btn-secondary-alt {
+	background-color: var(--secondary-light-gray);
+	color: var(--primary-black);
+}
+
+body .btn-secondary-alt:hover {
+	background-color: var(--primary-blue);
+	color: var(--primary-white);
+}
+
+/* Button outline secondary */
+/* Blue outline secondary button */
+
+body .btn-outline-secondary {
+	border-color: var(--primary-blue);
+	color: var(--primary-blue);
+	background-color: transparent;
+	box-shadow: 0px 0px 0px 1px var(--primary-blue) inset;
+}
+
+body .btn-outline-secondary:hover {
+	box-shadow: none;
+	color: var(--primary-black);
+	background-color: var(--secondary-light-gray);
+}
+
+body .btn-outline-secondary:focus, body .btn-outline-secondary.focus {
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(181, 182, 181, 0.5);
+	box-shadow: 0 0 0 0.2rem rgba(181, 182, 181, 0.5);
+	color:  var(--primary-black);
+}
+
+body .btn-outline-secondary.disabled, body .btn-outline-secondary:disabled {
+	color: var(--secondary-light-gray);
+	box-shadow: 0px 0px 0px 1px var(--secondary-light-gray) inset;
+	background-color: white;
+}
+
+body .btn-outline-secondary:not(:disabled):not(.disabled):active, body .btn-outline-secondary:not(:disabled):not(.disabled).active,
+body .show > .btn-outline-secondary.dropdown-toggle {
+	color: white;
+	background-color: #B5B5B6;
+	border-color: #B5B5B6;
+}
+
+body .btn-outline-secondary:not(:disabled):not(.disabled):active:focus, body .btn-outline-secondary:not(:disabled):not(.disabled).active:focus,
+body .show > .btn-outline-secondary.dropdown-toggle:focus {
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(181, 182, 181, 0.5);
+	box-shadow: 0 0 0 0.2rem rgba(181, 182, 181, 0.5);
+}
+
+/* Button action */
+/* Blue action button */
+.btn-actionWidth {
+	width:300px;
+	height:35px;
+}
+
+body .btn-action {
+	border-color: var(--primary-blue);
+	font-size:14pt;
+	color: var(--primary-white);
+	background-color: var(--primary-blue);
+	box-shadow: 0 0 0 1px var(--primary-blue) inset;
+	text-align: right;
+	margin-bottom: 3px;
+}
+
+body .btn-action:hover {
+	color: var(--primary-blue);
+	background-color: var(--primary-white);
+	cursor: pointer;
+	border: 0;
+
+}
+
+body .btn-action:focus, body .btn-action.focus {
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(181, 182, 181, 0.5);
+	box-shadow: 0 0 0 0.2rem rgba(181, 182, 181, 0.5);
+}
+
+body .btn-action.disabled, body .btn-action:disabled {
+	color: #B5B5B6;
+	background-color: white;
+}
+
+body .btn-action:not(:disabled):not(.disabled):active, body .btn-action:not(:disabled):not(.disabled).active,
+body .show > .btn-action.dropdown-toggle {
+	color: white;
+	background-color:var(--primary-blue);
+	border-color:var(--primary-blue);
+}
+
+body .btn-action:not(:disabled):not(.disabled):active:focus, body .btn-action:not(:disabled):not(.disabled).active:focus,
+body .show > .btn-action.dropdown-toggle:focus {
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(181, 182, 181, 0.5);
+	box-shadow: 0 0 0 0.2rem rgba(181, 182, 181, 0.5);
+}
+
+
+/* Button outline success */
+body .btn-outline-success {
+	color: #4FE08A;
+	background-color: white;
+	background-image: none;
+	border: 1px solid #4FE08A;
+}
+
+body .btn-outline-success:hover {
+	color: white;
+	background-color: #4FE08A;
+	border: 1px solid #4FE08A;
+}
+
+body .btn-outline-success:focus, body .btn-outline-success.focus {
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(79, 224, 138, 0.5);
+	box-shadow: 0 0 0 0.2rem rgba(79, 224, 138, 0.5);
+}
+
+body .btn-outline-success.disabled, body .btn-outline-success:disabled {
+	color: #4FE08A;
+	background-color: white;
+}
+
+body .btn-outline-success:not(:disabled):not(.disabled):active, body .btn-outline-success:not(:disabled):not(.disabled).active,
+body .show > .btn-outline-success.dropdown-toggle {
+	color: white;
+	background-color: #4FE08A;
+	border-color: #4FE08A;
+}
+
+body .btn-outline-success:not(:disabled):not(.disabled):active:focus, body .btn-outline-success:not(:disabled):not(.disabled).active:focus,
+body .show > .btn-outline-success.dropdown-toggle:focus {
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(79, 224, 138, 0.5);
+	box-shadow: 0 0 0 0.2rem rgba(79, 224, 138, 0.5);
+}
+
+/* Button info */
+
+body .btn-info {
+	background-color: #189692;
+	background-color: var(--btn-info-color);
+	border-color: #189692;
+	border-color: var(--btn-info-color);;
+}
+
+body .btn-info:hover {
+	background-color: #116a67;
+	background-color: var(--btn-info-color-hover);
+	border-color: #116a67;
+	border-color: var(--btn-info-color-hover);
+}
+
+body .info-color {
+	color: #189692;
+	color: var(--btn-info-color);
+}
+
+/* Button outline info */
+
+body .btn-outline-info {
+	color: var(--btn-info-color);
+	background-color: white;
+	background-image: none;
+	border: 1px solid var(--btn-info-color);
+}
+
+body .btn-outline-info:hover {
+	color: white;
+	background-color: var(--btn-info-color-hover);
+	border: 1px solid var(--btn-info-color-hover);
+}
+
+body .btn-outline-info:focus, body .btn-outline-info.focus {
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(24, 150, 146, 0.5);
+	box-shadow: 0 0 0 0.2rem rgba(24, 150, 146, 0.5);
+}
+
+body .btn-outline-info.disabled, body .btn-outline-info:disabled {
+	color: #189692;
+	color: var(--btn-info-color);
+	background-color: transparent;
+}
+
+body .btn-outline-info:not(:disabled):not(.disabled):active, body .btn-outline-info:not(:disabled):not(.disabled).active,
+body .show > .btn-outline-info.dropdown-toggle {
+	color: white;
+	background-color: var(--btn-info-color);
+	border: 1px solid var(--btn-info-color);
+}
+
+body .btn-outline-info:not(:disabled):not(.disabled):active:focus, body .btn-outline-info:not(:disabled):not(.disabled).active:focus,
+body .show > .btn-outline-info.dropdown-toggle:focus {
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(24, 150, 146, 0.5);
+	box-shadow: 0 0 0 0.2rem rgba(24, 150, 146, 0.5);
+}
+
+/* Button outline warning */
+
+body .btn-outline-warning {
+	color: #EBBA28;
+	background-color: white;
+	background-image: none;
+	border: 1x solid #EBBA28;
+}
+
+body .btn-outline-warning:hover {
+	color: white;
+	background-color: #EBBA28;
+	border: 1x solid #EBBA28;
+}
+
+body .btn-outline-warning:focus, body .btn-outline-warning.focus {
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(235, 186, 40, 0.5);
+	box-shadow: 0 0 0 0.2rem rgba(235, 186, 40, 0.5);
+}
+
+body .btn-outline-warning.disabled, body .btn-outline-warning:disabled {
+	color: #EBBA28;
+	background-color: white;
+}
+
+body .btn-outline-warning:not(:disabled):not(.disabled):active, body .btn-outline-warning:not(:disabled):not(.disabled).active,
+body .show > .btn-outline-warning.dropdown-toggle {
+	color: white;
+	background-color: #EBBA28;
+	border-color: #EBBA28;
+}
+
+body .btn-outline-warning:not(:disabled):not(.disabled):active:focus, body .btn-outline-warning:not(:disabled):not(.disabled).active:focus,
+body .show > .btn-outline-warning.dropdown-toggle:focus {
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(235, 186, 40, 0.5);
+	box-shadow: 0 0 0 0.2rem rgba(235, 186, 40, 0.5);
+}
+
+/* Button outline danger */
+
+body .btn-outline-danger {
+	color: #B3523C;
+	background-color: white;
+	background-image: none;
+	border-color: #B3523C;
+}
+
+body .btn-outline-danger:hover {
+	color: white;
+	background-color: #B3523C;
+	border-color: #B3523C;
+}
+
+body .btn-outline-danger:focus, body .btn-outline-danger.focus {
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(179, 82, 60, 0.5);
+	box-shadow: 0 0 0 0.2rem rgba(179, 82, 60, 0.5);
+}
+
+body .btn-outline-danger.disabled, body .btn-outline-danger:disabled {
+	color: #B3523C;
+	background-color: white;
+}
+
+body .btn-outline-danger:not(:disabled):not(.disabled):active, body .btn-outline-danger:not(:disabled):not(.disabled).active,
+body .show > .btn-outline-danger.dropdown-toggle {
+	color: white;
+	background-color: #B3523C;
+	border-color: #B3523C;
+}
+
+body .btn-outline-danger:not(:disabled):not(.disabled):active:focus, body .btn-outline-danger:not(:disabled):not(.disabled).active:focus,
+body .show > .btn-outline-danger.dropdown-toggle:focus {
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(179, 82, 60, 0.5);
+	box-shadow: 0 0 0 0.2rem rgba(179, 82, 60, 0.5);
+}
+
+/* Button outline light */
+
+body .btn-outline-light {
+	color: #F4F4F4;
+	background-color: transparent;
+	background-image: none;
+	border: 1px solid #F4F4F4;
+}
+
+body .btn-outline-light:hover {
+	color: #212529;
+	background-color: #F4F4F4;
+	border: 1px solid #F4F4F4;
+}
+
+body .btn-outline-light:focus, body .btn-outline-light.focus {
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(244, 244, 244, 0.5);
+	box-shadow: 0 0 0 0.2rem rgba(244, 244, 244, 0.5);
+}
+
+body .btn-outline-light.disabled, body .btn-outline-light:disabled {
+	color: #F4F4F4;
+	background-color: transparent;
+}
+
+body .btn-outline-light:not(:disabled):not(.disabled):active, body .btn-outline-light:not(:disabled):not(.disabled).active,
+body .show > .btn-outline-light.dropdown-toggle {
+	color: #212529;
+	background-color: #F4F4F4;
+	border-color: #F4F4F4;
+}
+
+body .btn-outline-light:not(:disabled):not(.disabled):active:focus, body .btn-outline-light:not(:disabled):not(.disabled).active:focus,
+body .show > .btn-outline-light.dropdown-toggle:focus {
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(244, 244, 244, 0.5);
+	box-shadow: 0 0 0 0.2rem rgba(244, 244, 244, 0.5);
+}
+
+/* Button outline dark */
+
+body .btn-outline-dark {
+	color: #3A3A3A;
+	background-color: transparent;
+	background-image: none;
+	border: 1px solid #3A3A3A;
+}
+
+body .btn-outline-dark:hover {
+	color: #ffffff;
+	background-color: #3A3A3A;
+	border: 1px solid #3A3A3A;
+}
+
+body .btn-outline-dark:focus, body .btn-outline-dark.focus {
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(58, 58, 58, 0.5);
+	box-shadow: 0 0 0 0.2rem rgba(58, 58, 58, 0.5);
+}
+
+body .btn-outline-dark.disabled, body .btn-outline-dark:disabled {
+	color:#3A3A3A;
+	background-color: transparent;
+}
+
+body .btn-outline-dark:not(:disabled):not(.disabled):active, body .btn-outline-dark:not(:disabled):not(.disabled).active,
+body .show > .btn-outline-dark.dropdown-toggle {
+	color: #ffffff;
+	background-color: #3A3A3A;
+	border-color: #3A3A3A;
+}
+
+body .btn-outline-dark:not(:disabled):not(.disabled):active:focus, body .btn-outline-dark:not(:disabled):not(.disabled).active:focus,
+body .show > .btn-outline-dark.dropdown-toggle:focus {
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(58, 58, 58, 0.5);
+	box-shadow: 0 0 0 0.2rem rgba(58, 58, 58, 0.5);
+}
+
+body .btn-outline-close {
+	color: #F96969;
+	background-color: transparent;
+	background-image: none;
+	border: 1px solid #F96969;
+}
+
+body .btn-outline-close:hover {
+	color: #ffffff;
+	background-color: #F96969;
+	border: 1px solid #F96969;
+}
+
+body .btn-outline-close:focus, .btn-outline-close.focus {
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(249, 105, 105, 0.5);
+	box-shadow: 0 0 0 0.2rem rgba(249, 105, 105, 0.5);
+}
+
+body .btn-outline-close.disabled, .btn-outline-close:disabled {
+	color: #F96969;
+	background-color: transparent;
+}
+
+body .btn-outline-close:not(:disabled):not(.disabled):active, body .btn-outline-close:not(:disabled):not(.disabled).active,
+body .show > .btn-outline-close.dropdown-toggle {
+	color: #ffffff;
+	background-color: #F96969;
+	border-color: #F96969;
+}
+
+body .btn-outline-dark:not(:disabled):not(.disabled):active:focus, body .btn-outline-dark:not(:disabled):not(.disabled).active:focus,
+body .show > .btn-outline-dark.dropdown-toggle:focus {
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(249, 105, 105, 0.5);
+	box-shadow: 0 0 0 0.2rem rgba(249, 105, 105, 0.5);
+}
+
+body .btn-remove-item {
+	margin-top: 1rem; /* Hopefully temporary fix for aligning these buttons in the table */
+	color: var(--secondary-light-gray-darken);
+	cursor: pointer;
+}
+
+body .btn-remove-item:hover {
+	color: var(--primary-black);
+	cursor: pointer;
+}
+
+/* Button warning */
+
+body .btn-warning {
+	color: #212529;
+	background-color: #ffeb3b;
+	border: 1px solid #ffeb3b;
+	-webkit-box-shadow: none;
+			box-shadow: none;
+}
+
+body .btn-warning:hover {
+	color: #212529;
+	background-color: #ffe715;
+	border: 1px solid #ffeb3b;
+}
+
+body .btn-warning:focus, .btn-warning.focus {
+	-webkit-box-shadow: none, 0 0 0 0.2rem rgba(255, 235, 59, 0.5);
+	box-shadow: none, 0 0 0 0.2rem rgba(255, 235, 59, 0.5);
+}
+
+body .btn-warning.disabled, .btn-warning:disabled {
+	color: #212529;
+	background-color: #ffeb3b;
+	border: 1px solid #ffeb3b;
+}
+
+body .btn-warning:not(:disabled):not(.disabled):active, body .btn-warning:not(:disabled):not(.disabled).active,
+body .show > .btn-warning.dropdown-toggle {
+	color: #212529;
+	background-color: #ffe608;
+	border: 1px solid #ffeb3b;
+}
+
+body .btn-warning:not(:disabled):not(.disabled):active:focus, body .btn-warning:not(:disabled):not(.disabled).active:focus,
+body .show > .btn-warning.dropdown-toggle:focus {
+	-webkit-box-shadow: none, 0 0 0 0.2rem rgba(255, 235, 59, 0.5);
+	box-shadow: none, 0 0 0 0.2rem rgba(255, 235, 59, 0.5);
+}
+
+/* Button danger */
+
+body .btn-danger {
+	color: #ffffff;
+	background-color: #f44336;
+	border: 1px solid #f44336;
+	-webkit-box-shadow: none;
+			box-shadow: none;
+}
+
+body .btn-danger:hover {
+	color: #ffffff;
+	background-color: #f22112;
+	border: 1px solid #f44336;
+}
+
+body .btn-danger:focus, .btn-danger.focus {
+	-webkit-box-shadow: none, 0 0 0 0.2rem rgba(244, 67, 54, 0.5);
+	box-shadow: none, 0 0 0 0.2rem rgba(244, 67, 54, 0.5);
+}
+
+body .btn-danger.disabled, .btn-danger:disabled {
+	color: #ffffff;
+	background-color: #f44336;
+	border-color: #f44336;
+}
+
+body .btn-danger:not(:disabled):not(.disabled):active, body .btn-danger:not(:disabled):not(.disabled).active,
+body .show > .btn-danger.dropdown-toggle {
+	color: #ffffff;
+	background-color: #ea1c0d;
+	border-color: #de1b0c;
+}
+
+body .btn-danger:not(:disabled):not(.disabled):active:focus, .btn-danger:not(:disabled):not(.disabled).active:focus,
+.show > .btn-danger.dropdown-toggle:focus {
+	-webkit-box-shadow: none, 0 0 0 0.2rem rgba(244, 67, 54, 0.5);
+	box-shadow: none, 0 0 0 0.2rem rgba(244, 67, 54, 0.5)
+}
+
+/* btn link */
+
+body .btn-link {
+  font-weight: 400;
+  color: #007bff;
+  background-color: transparent;
+}
+
+body .btn-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+  background-color: transparent;
+  border: none;
+}
+
+body .btn-link:focus, body .btn-link.focus {
+  text-decoration: underline;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+body .btn-link:disabled, body .btn-link.disabled {
+  color: #6c757d;
+  pointer-events: none;
+}
+
+body .btn-link:hover .material-icons-sharp {
+	text-decoration: none;
+}
+
+/* For use with btn-link when links need to be inline with text */
+.inline-btn {
+	display: inline !important;
+	padding: 0 !important;
+	vertical-align: initial !important;
+}
+
+/* For use with btn-link in tables for better formatting */
+.table-btn {
+	display: inline-block !important;
+	text-align: left !important;
+}
+
+/* Blue yellow button */
+
+.blue-yellow-btn {
+	display: flex;
+	background-color: var(--tertiary-yellow);
+	margin-bottom: 1rem;
+	width: 100%;
+}
+
+.blue-yellow-btn .blue-btn {
+	padding: 0.75rem 1.75rem 1rem 1.75rem;
+	background-color: var(--primary-blue);
+	color: var(--primary-white);
+	font-family: var(--futura-maxi-book);
+	font-size: 12pt;
+	box-shadow: none;
+	border: none;
+	border-radius: 0;
+	align-items: center;
+	cursor: pointer;
+	display: flex;
+	width: calc(100% - 45px);
+	text-decoration: none;
+}
+
+a.blue-yellow-btn:hover > .blue-btn {
+	background-color: var(--secondary-light-gray);
+	color: var(--primary-black);
+}
+
+a.blue-yellow-btn:hover {
+	text-decoration: none;
+}
+
+.blue-yellow-btn .yellow-arrow {
+	color: var(--primary-blue);
+	width: 45px;
+	padding-left: 10px;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+/* Dropdown Buttons */
+/* Do not use with .btn, these are specialized buttons for dropdown content */
+button.btn-dropdown-toggle {
+	font-size: 12pt;
+	display: flex;
+	min-height: 40px;
+	min-width: 250px;
+	align-items: center;
+	justify-content: space-between;
+	background-color: transparent;
+	border: 3px solid var(--secondary-light-gray);
+	cursor: pointer;
+}
+
+button.btn-dropdown-toggle:hover,
+.dropdown.show button.btn-dropdown-toggle {
+	background-color: var(--secondary-light-gray);
+}
+
+.dropdown.show button.dropdown-toggle .material-icons-sharp
+{
+  transform: rotateX(180deg);
+}
+
+button.btn-dropdown-toggle::after {
+	display: none;
+}
+
+div.dropdown .dropdown-menu.show {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border-radius: 0;
+}
+
+
+.dropdown-menu.show button {
+	padding-top: 0.3rem;
+	padding-bottom: 0.3rem;
+}
+
+.dropdown-menu.show button {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: none;
+	background-color: transparent;
+	width: 100%;
+	cursor: pointer;
+}
+
+.dropdown-menu.show button:hover {
+	background-color: var(--secondary-light-gray);
+}
+
+/* Tables */
+
+/* Fixes the table in place so field lengths will not cause the table to expand */
+.table-fixed {
+	table-layout: fixed;
+	width: 100%;
+	white-space: nowrap;
+  }
+
+/* Causes overflow text in the table to end with ellipsis apply to individual cells */
+.overflow-cell {
+	text-overflow: ellipsis;
+	max-width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+table.table th {
+	border-top: none;
+}
+
+table.table th:first-of-type {
+	padding-left: 0;
+}
+
+table.table td:first-of-type {
+	padding-left: 0;
+}
+
+table.table td {
+	vertical-align: top;
+}
+
+/* Adjust btn-link in table to fit table alignment
+since table has its own padding and alignment settings */
+table.table .btn.btn-link {
+	font-family: var(--arial);
+	max-width: 100%;
+	padding: 0;
+	vertical-align: top;
+	text-align: left;
+}
+
+table.table .btn.btn-link .text {
+	vertical-align: top;
+	white-space: break-spaces;
+}
+
+::-webkit-input-placeholder {
+	font-style: italic;
+}
+:-moz-placeholder {
+	font-style: italic;
+}
+::-moz-placeholder {
+	font-style: italic;
+}
+:-ms-input-placeholder {
+	font-style: italic;
+}
+
+.inline-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+/* Font awesome extensions */
+
+.fa-1-5x {
+	font-size: 1.5rem;
+}
+
+/* Missing bootstrap justification */
+.justify-content-evenly {
+	justify-content: space-around; /* IE fallback */
+	justify-content: space-evenly;
+}
+
+/* Common flex styles not included in bootstrap */
+.flex-grow-2 {
+	flex-grow: 2 !important;
+}
+
+/* Archwizard overrides */
+
+/* Archwizard does not have styles for more than 11 steps - but will
+   apply an empty style that results in the nav bar alignment breaking
+   - Since I don't see a way to programmatically style the bar - we must
+   overwrite the style that is being applied with our own
+
+   Note that 100% width on the list item works for us because we know that
+   it will be squished by the flex row since it expands past the container
+   but if it was smaller than the container it would expand the steps to
+   take up the container, so I am approximating the width of the step
+   with 100 / num steps. I don't know why archwizard didn't apply these
+   styles programmatically, but we will have to handle it this way unless
+   we find an easier solution.
+*/
+
+aw-wizard {
+	width: 100%;
+}
+
+body aw-wizard-navigation-bar {
+	position: relative;
+	/* left: -4rem; */
+}
+
+aw-wizard-navigation-bar.horizontal > ul.steps-indicator.steps-11::before {
+  left: 5% !important;
+  right: 5% !important;
+}
+
+aw-wizard-navigation-bar.horizontal ul.steps-indicator.steps-11 li {
+	width: 9.1%
+}
+
+aw-wizard-navigation-bar.horizontal ul.steps-indicator * {
+  cursor: pointer;
+}
+
+aw-wizard-navigation-bar.horizontal.large-empty-symbols ul.steps-indicator li.editing .step-indicator{
+  cursor: pointer;
+}
+
+aw-wizard-navigation-bar.horizontal.large-empty-symbols ul.steps-indicator li {
+   cursor: pointer;
+}
+
+body aw-wizard-navigation-bar.horizontal ul.steps-indicator li a .label {
+	text-transform: none;
+}
+
+aw-wizard-step h3 {
+	margin-bottom: 1.5rem;
+}
+
+aw-wizard-navigation-bar.horizontal ul.steps-indicator li .step-indicator {
+  font-size: 1.5rem !important;
+}
+
+body .wizard-steps.horizontal {
+	flex-wrap: wrap;
+}
+
+.pagination {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	padding-left: 0;
+	list-style: none;
+	border-radius: 0.25rem;
+}
+
+.page-link {
+	position: relative;
+	display: block;
+	padding: 0.5rem 0.75rem;
+	margin-left: 0;
+	line-height: 1.25;
+	color:var(--primary-blue);
+	background-color: transparent;
+	border: 0 solid #dee2e6;
+}
+
+.page-link:hover {
+	color: #0a6ebd;
+	text-decoration: none;
+	background-color: #e9ecef;
+	border-color: #dee2e6;
+}
+
+.page-link:focus {
+	z-index: 2;
+	outline: 0;
+	-webkit-box-shadow: 0 0 0 0.2rem rgba(33, 150, 243, 0.25);
+			box-shadow: 0 0 0 0.2rem rgba(33, 150, 243, 0.25);
+}
+
+.page-link:not(:disabled):not(.disabled) {
+	cursor: pointer;
+}
+
+.page-item:first-child .page-link {
+	margin-left: 0;
+	border-top-left-radius: 0.25rem;
+	border-bottom-left-radius: 0.25rem;
+}
+
+.page-item:last-child .page-link {
+	border-top-right-radius: 0.25rem;
+	border-bottom-right-radius: 0.25rem;
+}
+
+.page-item.active .page-link {
+	z-index: 1;
+	color: #ffffff;
+	background-color: #2196f3;
+	border-color: #2196f3;
+}
+
+.page-item.disabled .page-link {
+	color: #6c757d;
+	pointer-events: none;
+	cursor: auto;
+	background-color: transparent;
+	border-color: #dee2e6;
+}
+
+.pagination-lg .page-link {
+	padding: 0.75rem 0;
+	font-size: 1.25rem;
+	line-height: 1.5;
+}
+
+.pagination-lg .page-item:first-child .page-link {
+	border-top-left-radius: 0.3rem;
+	border-bottom-left-radius: 0.3rem;
+}
+
+.pagination-lg .page-item:last-child .page-link {
+	border-top-right-radius: 0.3rem;
+	border-bottom-right-radius: 0.3rem;
+}
+
+.pagination-sm .page-link {
+	padding: 0.25rem 0;
+	font-size: 0.875rem;
+	line-height: 1.5;
+}
+
+.pagination-sm .page-item:first-child .page-link {
+	border-top-left-radius: 0.2rem;
+	border-bottom-left-radius: 0.2rem;
+}
+
+.pagination-sm .page-item:last-child .page-link {
+	border-top-right-radius: 0.2rem;
+	border-bottom-right-radius: 0.2rem;
+}
+
+
+/**
+Cursors
+**/
+
+.pointer-cursor {
+	cursor: pointer;
+}
+
+/* Lists  */
+
+.list-group-item {
+	position: relative;
+	display: block;
+	padding: 0.75rem 0.75rem;
+	margin-bottom: 0;
+	background-color: inherit;
+	border: 0 solid rgba(0, 0, 0, 0.125);
+}
+
+.list-group-item:first-child {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.list-group-item:last-child {
+	margin-bottom: 0;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.list-group-item:hover, .list-group-item:focus {
+	z-index: 1;
+	text-decoration: none;
+}
+
+.list-group-item.disabled, .list-group-item:disabled {
+	color: #6c757d;
+	background-color: inherit;
+}
+
+.list-group-item.active {
+	z-index: 2;
+	color: #ffffff;
+	background-color: #2196f3;
+	border-color: #2196f3;
+}
+
+.info-list {
+  list-style: square;
+  padding-left: 2rem;
+}
+
+.info-list li::marker {
+  font-size: 24pt;
+}
+
+.info-list li {
+	line-height: 1.5rem;
+	margin-bottom: 5px;
+}
+
+.info-list li span {
+	vertical-align: text-bottom;
+}
+
+/*all action icons*/
+.tas-edit-action,
+.tas-approve-action,
+.tas-review-action,
+.tas-favor-action{
+	cursor: pointer;
+	font-size: 1.5rem;
+	color: #2FB88F;
+}
+
+.tas-asset-link{
+	cursor: pointer;
+	font-size: 1rem;
+	color: #2FB88F;
+}
+
+.tas-delete-action,
+.tas-reject-action,
+.tas-iheart-action,
+.tas-clear-update-action,
+.tas-unfavor-action{
+	cursor: pointer;
+	font-size: 1.5rem;
+	color: #c0392b;
+}
+
+.tas-unfollow-action{
+	cursor: pointer;
+	font-size: 1.5rem;
+	color: #663300;
+}
+
+/* Modals */
+
+.modal {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 2002 !important;
+	display: none;
+	overflow: hidden;
+	outline: 0;
+}
+
+.modal-open .modal {
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.modal-content {
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	width: 100%;
+	pointer-events: auto;
+	background-color: #ffffff;
+	background-clip: padding-box;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 0.3rem;
+	-webkit-box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
+	box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
+	outline: 0; text-align: left;
+}
+
+.modal-backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 2001 !important;
+	background-color: #000000;
+}
+
+.modal-backdrop.fade {
+	opacity: 0;
+}
+
+.modal-backdrop.show {
+	opacity: 0.26;
+}
+
+/* Margin */
+.mr-1,
+.mx-1 {
+	margin-right: 0.25rem !important;
+}
+
+.mb-1,
+.my-1 {
+	margin-bottom: 0.25rem !important;
+}
+
+.ml-1,
+.mx-1 {
+	margin-left: 0.25rem !important;
+}
+
+.m-2 {
+	margin: 0.5rem !important;
+}
+
+.mt-2,
+.my-2 {
+	margin-top: 0.5rem !important;
+}
+
+.mr-2,
+.mx-2 {
+	margin-right: 0.5rem !important;
+}
+
+.mb-2,
+.my-2 {
+	margin-bottom: 0.5rem !important;
+}
+
+.ml-2,
+.mx-2 {
+	margin-left: 0.5rem !important;
+}
+
+.m-3 {
+	margin: 1rem !important;
+}
+
+.mt-3,
+.my-3 {
+	margin-top: 1rem !important;
+}
+
+.mr-3,
+.mx-3 {
+	margin-right: 1rem !important;
+}
+
+.mb-3,
+.my-3 {
+	margin-bottom: 1rem !important;
+}
+
+.ml-3,
+.mx-3 {
+	margin-left: 1rem !important;
+}
+
+/* Form Controls */
+
+body .form-control {
+	border-radius: 0px; /* To match material design */
+}
+
+body .form-group {
+	margin-bottom: 2rem;
+}
+
+body .form-group label {
+	cursor: text;
+	font-weight: bold;
+}
+
+.form-section-header {
+	margin-top: 0.75rem;
+	font-size: 14pt;
+}
+
+p-multiselectg .ui-multiselect .ui-multiselect-label {
+	padding: 0 !important;
+	margin: 0 !important;
+	border-radius: 0 !important;
+}
+
+
+p-group-multiselect {
+  border-top: none !important;
+  border-right: none !important;
+  border-bottom: none !important;
+}
+
+p-multiselectg .selected-item {
+	background-color: var(--primary-blue) !important;
+}
+
+p-multiselectg .selected-item .fa.fa-times-circle:hover {
+	cursor: pointer !important;
+}
+
+.ui-multiselect-panel .child-option-checkbox {
+	margin: 3px 5px !important;
+	padding: 0px !important;
+}
+
+.ui-multiselect-panel .child-option-checkbox p-checkbox {
+	padding: 5px !important;
+}
+
+.ui-multiselect-panel {
+	border-radius: 0 !important;
+}
+
+.ui-multiselect-panel p-checkbox,
+.ui-multiselect-panel p-checkbox label {
+	display: inline-block;
+	width: 100%;
+}
+
+p-multiselectg .ui-multiselect .ui-multiselect-trigger {
+	border-left: none;
+}
+
+/* Note that this is technically not the elemnt that triggers the select all,
+but there is no good way to style the actual select all element without weird behavior
+due to the way that p-multiselect works */
+.ui-multiselect-panel .ui-multiselect-item > span {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.ui-multiselect-panel .ui-multiselect-item > span:hover {
+	cursor: pointer !important;
+	background-color: var(--secondary-light-gray) !important;
+}
+
+.ui-multiselect-panel .child-option-checkbox:hover {
+	cursor: pointer !important;
+	background-color: var(--secondary-light-gray);
+}
+
+.ui-multiselect-panel .child-option-checkbox:hover label {
+	cursor: pointer;
+}
+
+.ui-multiselect-panel .ui-multiselect-item:not(.ui-state-highlight):not(.ui-state-disabled):hover {
+	background-color: inherit !important;
+}
+
+
+.ui-multiselect-panel .ui-multiselect-item label {
+  margin-bottom: 0;
+}
+
+/* Alignment */
+
+.align-middle {
+	vertical-align: middle;
+}
+
+.align-bottom {
+	vertical-align: bottom;
+}
+
+.shiftLeft {
+	padding-left: 0px !important;
+}
+
+.nowrap {
+	white-space: nowrap !important;
+}
+
+/* In DT styles, this is tied to the article element. To avoid misuse of this element I am tying
+the top padding and yellow rule to the first h1 under a main section. */
+main > section > h1:first-of-type {
+	border-top: 0.5rem solid var(--tertiary-yellow);
+	padding-top: 1rem;
+	margin-bottom: 3.75rem
+}
+
+/* Attempting to replicate the 'viewcontainer' that DT uses */
+/* Override for pages that shouldn't have padding e.g. home/landing/sso */
+router-outlet ~ * {
+	display: block;
+    padding-top: 2.5rem;
+}
+
+/* Pages without padding here */
+router-outlet ~ app-home,
+router-outlet ~ app-all,
+router-outlet ~ app-capture,
+router-outlet ~ app-msdf,
+router-outlet ~ app-pef,
+router-outlet ~ app-landing {
+	padding-top: 0;
+}
+
+/* Cards - Check DT styles before override */
+
+body .card {
+	box-shadow: none;
+}
+
+/* Hexagon Badges (with Font Awesome Icons; Olivia Ng) : Begin */
+
+/*
+TODO: needs to be reformated to BB badges so does not break normal badges
+.badge {
+	position: relative;
+	margin: 1.5em 3em;
+	width: 4em;
+	height: 6.2em;
+	border-radius: 10px;
+	display: inline-block;
+	top: 0;
+	transition: all 0.2s ease;
+	&:before,
+	&:after {
+		position: absolute;
+		width: inherit;
+		height: inherit;
+		border-radius: inherit;
+		background: inherit;
+		content: "";
+		@include margin-auto;
+	}
+	&:before {
+		transform: rotate(60deg);
+	}
+	&:after {
+		transform: rotate(-60deg);
+	}
+	&:hover {
+		top: -4px;
+	}
+	.circle {
+		width: 60px;
+		height: 60px;
+		position: absolute;
+		background: #fff;
+		z-index: 10;
+		border-radius: 50%;
+		@include margin-auto;
+		i.fa {
+			font-size: 2em;
+			margin-top: 8px;
+		}
+	}
+	.font {
+		display: inline-block;
+		margin-top: 1em;
+	}
+	.ribbon {
+		position: absolute;
+		border-radius: 4px;
+		padding: 5px 5px 4px;
+		width: 100px;
+		z-index: 11;
+		color: #fff;
+		bottom: 12px;
+		left: 50%;
+		margin-left: -55px;
+		height: 15px;
+		font-size: 14px;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.27);
+		text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+		text-transform: uppercase;
+		background: linear-gradient(to bottom right, #555 0%, #333 100%);
+		cursor: default;
+	}
+}
+
+.yellow {
+	background: linear-gradient(to bottom right, #ffeb3b 0%, #fbc02d 100%);
+	color: #ffb300;
+}
+
+.orange {
+	background: linear-gradient(to bottom right, #ffc107 0%, #f57c00 100%);
+	color: #f68401;
+}
+
+.pink {
+	background: linear-gradient(to bottom right, #F48FB1 0%, #d81b60 100%);
+	color: #dc306f;
+}
+
+.red {
+	background: linear-gradient(to bottom right, #f4511e 0%, #b71c1c 100%);
+	color: #c62828;
+}
+
+.purple {
+	background: linear-gradient(to bottom right, #ab47bc 0%, #4527a0 100%);
+	color: #7127a8;
+}
+
+.teal {
+	    background: linear-gradient(to bottom right, #4DB6AC 0%, #00796B 100%);
+    color: #34a297;
+}
+
+.blue {
+	    background: linear-gradient(to bottom right, #4FC3F7 0%, #2196F3 100%);
+    color: #259af3;
+}
+
+.blue-dark {
+	    background: linear-gradient(to bottom right, #1976D2 0%, #283593 100%);
+    color: #1c68c5;
+}
+
+.green {
+	background: linear-gradient(to bottom right, #cddc39 0%, #8bc34a 100%);
+	color: #7cb342;
+}
+
+.green-dark {
+	    background: linear-gradient(to bottom right, #4CAF50 0%, #1B5E20 100%);
+    color: #00944a;
+}
+
+.silver {
+	background: linear-gradient(to bottom right, #E0E0E0 0%, #BDBDBD 100%);
+    color: #9e9e9e;
+}
+
+.gold {
+	background: linear-gradient(to bottom right, #e6ce6a 0%, #b7892b 100%);
+    color: #b7892b;
+}
+*/
+/* Hexagon Badges (with Font Awesome Icons; Olivia Ng) : End */

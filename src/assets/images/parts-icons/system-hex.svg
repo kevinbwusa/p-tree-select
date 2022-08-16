@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="hardware-hex"
+   viewBox="0 0 20 22"
+   version="1.1"
+   sodipodi:docname="system-hex.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+  <metadata
+     id="metadata13">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>hardware-hex</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1096"
+     inkscape:window-height="869"
+     id="namedview11"
+     showgrid="false"
+     inkscape:zoom="10.727273"
+     inkscape:cx="10"
+     inkscape:cy="11"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="hardware-hex" />
+  <defs
+     id="defs4">
+    <style
+       id="style2">.cls-1{fill:#e08433;}</style>
+  </defs>
+  <title
+     id="title6">hardware-hex</title>
+  <polygon
+     class="cls-1"
+     points="0 5.6 10 0 20 5.6 20 16.4 10 22 0 16.4 0 5.6"
+     id="polygon8" />
+  <path
+     style="fill:#000000;fill-opacity:1;stroke-width:0.09322034"
+     d="M 4.9614407,19.139653 0.0440678,16.378308 V 10.999977 5.6216445 L 4.9912403,2.8518479 c 2.7209448,-1.5233882 5.001605,-2.75679636 5.0681337,-2.74090705 0.06653,0.0158893 2.32886,1.26576645 5.027404,2.77750485 L 19.99322,5.6370609 V 11 16.362939 l -4.90699,2.748615 c -2.698844,1.511738 -4.974586,2.757802 -5.057203,2.76903 -0.082617,0.01123 -2.3630312,-1.222192 -5.0675863,-2.740931 z"
+     id="path3718"
+     inkscape:connector-curvature="0" />
+</svg>

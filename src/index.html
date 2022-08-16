@@ -1,19 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Demo</title>
-    <base href="/" />
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asset Stores</title>
+  <base href="/">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/node_modules/primeicons/primeicons.css"
-    />
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  </head>
-  <body>
-    <app-root></app-root>
-  </body>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href=".\assets\images\favicon.png"/>
+
+  <!-- Matomo -->
+  <script type="text/javascript">
+    var _paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['alwaysUseSendBeacon']);
+    _paq.push(['trackPageView']);
+    _paq.push(["setCookieDomain", "*.localhost"]);
+    _paq.push(["setDomains", ["*.localhost"]]);
+    _paq.push(['setDocumentTitle', document.domain + "/" + document.title]);
+    _paq.push(['enableLinkTracking']);
+    _paq.push(['enableHeartBeatTimer']);
+    _paq.push(['trackAllContentImpressions']);
+    //_paq.push(['setUserId',"MyId: "+ localStorage.getItem('username')]); //in signin we assign userID
+    // _paq.push(['trackPageView']);  we will need to call this in each component to get a more accurate metric.
+
+    (function() {
+      var u="//localhost:7007/";
+      // var u="//localhost/matomo/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  <noscript><p><img src="//localhost/matomo/matomo.php?idsite=1&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Matomo Code -->
+</head>
+<body>
+  <app-root></app-root>
+</body>
 </html>

@@ -1,0 +1,163 @@
+/* you can place your own css variables for your application here. these can then be used throughout your application for styling. */
+:root {
+
+    /* DT styles */
+
+    --futura-maxi-bold: 'FuturaMaxi-Bold', Arial, Helvetica, sans-serif;
+    --futura-maxi-book: 'FuturaMaxi-Book', Arial, Helvetica, sans-serif;
+    --arial: Arial, Helvetica, sans-serif;
+
+    --link-color: #0678c6;
+
+    --primary-blue: #00269a;
+    --primary-white: #FFFFFF;
+    --primary-black: #000000;
+
+    --secondary-gray: #7B868C;
+    --secondary-orange: #BF5627;
+    --secondary-teal: #3F96B4;
+    --secondary-purple: #2E1A46;
+    --secondary-yellow: #C2D500;
+    --secondary-light-gray: #DFE2EE;
+    --secondary-plum: #9f1c50;
+
+    --tertiary-light-gray: #A5BAC9;
+    --tertiary-light-blue: #65B2E8;
+    --tertiary-light-yellow: #F8DF8D;
+    --tertiary-yellow: #F0DF00;
+    --tertiary-light-green: #00A887;
+    --tertiary-green: #205A41;
+    --tertiary-gray: #53575A;
+    --tertiary-blue: #002554;
+
+    --primary-blue-darken: #001E7B;
+    --primary-white-darken: #CCCCCC;
+    --primary-black-lighten: #333333;
+
+    --secondary-gray-darken: #626B70;
+    --secondary-orange-darken: #99451F;
+    --secondary-teal-darken: #327890;
+    --secondary-purple-darken: #251538;
+    --secondary-yellow-darken: #9BAA00;
+    --secondary-light-gray-darken: #B2B5BE;
+
+    --tertiary-light-gray-darken: #8495A1;
+    --tertiary-light-blue-darken: #518EBA;
+    --tertiary-light-yellow-darken: #C6B271;
+    --tertiary-yellow-darken: #C0B200;
+    --tertiary-light-green-darken: #00866C;
+    --tertiary-green-darken: #1A4834;
+    --tertiary-gray-darken: #424648;
+    --tertiary-blue-darken: #001E43;
+
+    /* TAS Styles */
+
+    /* Used as core background of all pages
+    Also used to define text that is overlaid on this background color
+    */
+    --page-bg-color:white;
+    --page-bg-font-family: var(--futura-maxi-book);
+    --page-bg-font-weight:700;
+    --page-bg-font-size:1.0em;
+    --page-bg-font-color:black;
+
+    /* Used to define the inner body of pages (<div class="container">)
+    Also used to define text that is overlaid on this background color
+    ie: the inner section of the FAQ screen
+    */
+    --page-body-color:white;
+    --page-body-font-family: var(--futura-maxi-bold);
+    --page-body-font-weight:700;
+    --page-body-font-size:1.0em;
+    --page-body-font-color:white;
+
+    --page-body-title-color:lightgrey;  /* was  #6F7115 */
+    --page-body-title-font-family: var(--futura-maxi-book);
+    --page-body-title-font-weight:700;
+    --page-body-title-font-size:2.0em;
+    --page-body-title-font-color:black;
+
+    /* Used for the text contained in the title
+    ie: Northrop Grumman's
+    Technology Asset Store
+    */
+    --title-font-family: var(--futura-maxi-book);
+    --title-font-style:italic;
+    --title-font-weight:700;
+    --title-font-size:20pt;
+    --title-font-color:#189692;
+
+    /* Used in the Nav bar
+    IE: HOME, BROWSE, SUBMIT, FAQ
+    */
+    --title-header-font-family:var(--futura-maxi-book);
+    --title-header-font-style:bold;
+    --title-header-font-weight:700;
+    --title-header-font-size:16pt;
+    --title-header-font-color:#189692;
+
+
+    --nav-bg-color:#F4F4F4;
+    --nav-btn-unselected:#F4F4F4;
+    --nav-btn-selected:#7BC9F0;
+    --nav-btn-border:grey;
+    --nav-btn-hover:#155B5D;
+
+
+    --nav-font-family:var(--futura-maxi-book);
+    --nav-font-weight:100;
+    --nav-font-size:14pt;
+    --nav-font-color:#189692;
+    --nav-font-color-selected:#FFFFFF;
+    --nav-font-color-hover:white;
+
+    /* Used for the Browse filter selection buttons
+    IE: Capabilities, Asset Types, Business Sectors
+    */
+
+    --sb-filter-font-family: var(--futura-maxi-book);
+    --sb-filter-font-style:italic;
+    --sb-filter-font-weight:700;
+    --sb-filter-font-size:10pt;
+    --sb-filter-font-color:#189692;
+    --sb-filter-fontTitle-size:16pt;
+    --sb-filter-bg-color:#F4F4F4;
+
+    --listview-btn-hover:#1088AD;
+    --listview-btn-selected:#7BC9F0;
+
+    --btn-primary-color: #7BC9F0; /* Light blue */
+    --btn-primary-color-rgba:rgba(123, 201, 240, 0.5) ;
+    --btn-secondary-color:#B5B5B6; /* Grey */
+    --btn-secondary-color-rgba:rgba(181, 182, 181, 0.5);
+    --btn-secondary-color-hover:#1088AD;	/* dark blue */
+    --btn-secondary-color-hover-rgba:rgba(16, 136, 173, 0.5);
+    --btn-success-color:#4FE08A;				/* Light green */
+    --btn-success-color-rgba:rgba(79, 224, 138, 0.5);
+    --btn-danger-color:#B3523C;				/* Rust */
+    --btn-danger-color-rgba: rgba(179, 82, 60, 0.5);
+    --btn-warning-color:#EBBA28;			/* Bright Yellow */
+    --btn-warning-color-rgba:rgba(235, 186, 40, 0.5);
+    --btn-info-color:black;
+    --btn-info-color-rgba:rgba(24, 150, 146, 0.5);
+    --btn-info-color-hover:var(--primary-blue);
+    --btn-close-color:#F96969;				/* light/soft red */
+    --btn-close-color-rgba:rgba(249, 105, 105, 0.5);
+    --btn-light-color:#F4F4F4;				/* light grey */
+    --btn-light-color-rgba:rgba(244, 244, 244, 0.5);
+    --btn-dark-color:#3A3A3A;				/* Dark grey */
+    --btn-dark-color-rgba:rgba(58, 58, 58, 0.5);
+
+   /* Hero area definitions */
+    --hero-area-width: 100%;
+    --hero-area-padding: 75px 0 75px;
+    --hero-area-height: 634px;
+
+    --hero-header-size: 3rem;
+    --hero-header-padding: 1rem;
+
+    --hero-content-color: white;
+
+    --default-icon-size: 24px;
+
+}
