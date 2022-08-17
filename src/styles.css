@@ -2129,8 +2129,44 @@ TODO: needs to be reformated to BB badges so does not break normal badges
 */
 /* Hexagon Badges (with Font Awesome Icons; Olivia Ng) : End */
 
+/* Override primeng tree styling */
+.ui-tree .ui-treenode-label.ui-state-hover, .ui-tree .ui-treenode-label.ui-state-highlight {
+    font-weight: normal;
+    border: 0 none;
+	background: #E3F2FD;
+    color: #495057;
+}
+.ui-tree .ui-treenode-label {
+    display: inline-block;
+    padding: 0 0.25em;
+    vertical-align: middle;
+}
 .ui-state-highlight {
+    background: #E3F2FD;
+    color: #495057;
     border-color: #156090;
-    background-color: whitesmoke;
-    color: black;
+}
+.ui-corner-all {
+    border-radius: 3px;
+}
+.ui-tree .ui-treenode-label {
+    display: inline-block;
+    padding: 0 0.25em;
+    vertical-align: middle;
+}
+.ui-corner-all {
+    border-radius: 3px;
+}
+.ui-widget, .ui-widget * {
+    box-sizing: border-box;
+}
+.ui-tree .ui-chkbox .ui-chkbox-icon {
+    margin-left: 1px;
+}
+.ui-chkbox .ui-chkbox-icon {
+    display: block;
+	border-color: #2196f3;
+    background: #2196F3;
+	transition-duration: .2s;
+    color: #fff;
 }
