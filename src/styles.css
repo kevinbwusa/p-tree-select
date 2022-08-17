@@ -2128,3 +2128,9 @@ TODO: needs to be reformated to BB badges so does not break normal badges
 }
 */
 /* Hexagon Badges (with Font Awesome Icons; Olivia Ng) : End */
+
+.ui-state-highlight {
+    border-color: #156090;
+    background-color: whitesmoke;
+    color: black;
+}
